@@ -48,49 +48,6 @@ export function Hero() {
     phone: "",
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
-
-const handleSubmit = async () => {
-  if (!isAgreed || !formData.product || !formData.name || !formData.phone) {
-    return;
-  }
-
-  setIsSubmitting(true);
-  setStatus("idle");
-
-  try {
-    const res = await fetch("/api/investroute", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        product: formData.product,
-        name: formData.name,
-        phone: formData.phone,
-        termsAccepted: isAgreed,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data?.error || "Submission failed");
-    }
-
-    setStatus("success");
-    setFormData({ product: "", name: "", phone: "" });
-    setIsAgreed(false);
-  } catch (err) {
-    console.error(err);
-    setStatus("error");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -101,6 +58,13 @@ const handleSubmit = async () => {
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+
+  const scrollToForm = () => {
+    const formElement = document.getElementById("contact")
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
 
   return (
     <section
@@ -162,14 +126,12 @@ const handleSubmit = async () => {
                         {slides[currentSlide].description}
                       </motion.p>
 
-                      {/* ⭐ CTA Button – updated logic here */}
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                       >
                         {currentSlide === 0 ? (
-                          // 👉 Slide 0 → Angel One Link
                           <a
                             href="https://angel-one.onelink.me/Wjgr/2mfp3knv"
                             target="_blank"
@@ -181,13 +143,13 @@ const handleSubmit = async () => {
                             </Button>
                           </a>
                         ) : (
-                          // 👉 Other slides → Default login link
-                          <Link href="/login">
-                            <Button className="bg-secondary hover:bg-secondary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-lg rounded-full group shadow-lg hover:shadow-xl transition-all">
-                              {slides[currentSlide].cta}
-                              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-                            </Button>
-                          </Link>
+                          <Button
+                            onClick={scrollToForm}
+                            className="bg-secondary hover:bg-secondary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-lg rounded-full group shadow-lg hover:shadow-xl transition-all"
+                          >
+                            {slides[currentSlide].cta}
+                            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                          </Button>
                         )}
                       </motion.div>
                     </div>
@@ -293,35 +255,15 @@ const handleSubmit = async () => {
 
               {/* Submit Button */}
               <Button
-  onClick={handleSubmit}
-  disabled={
-    isSubmitting ||
-    !isAgreed ||
-    !formData.product ||
-    !formData.name ||
-    !formData.phone
-  }
-  className={`w-full py-5 text-lg rounded-xl mt-2 transition-all ${
-    !isAgreed || !formData.product || !formData.name || !formData.phone
-      ? "bg-muted text-muted-foreground"
-      : "bg-accent text-accent-foreground hover:opacity-90"
-  }`}
->
-  {isSubmitting ? "Submitting..." : "Submit"}
-  {status === "success" && (
-  <p className="text-green-600 text-sm font-medium mt-2">
-    ✅ Thank you! Our team will contact you shortly.
-  </p>
-)}
-
-{status === "error" && (
-  <p className="text-red-600 text-sm font-medium mt-2">
-    ❌ Something went wrong. Please try again.
-  </p>
-)}
-
-</Button>
-
+                className={`w-full py-5 text-lg rounded-xl mt-2 ${
+                  !isAgreed || !formData.product || !formData.name || !formData.phone
+                    ? "bg-muted text-muted-foreground"
+                    : "bg-accent text-accent-foreground"
+                }`}
+                disabled={!isAgreed || !formData.product || !formData.name || !formData.phone}
+              >
+                Submit
+              </Button>
             </div>
           </motion.div>
         </div>

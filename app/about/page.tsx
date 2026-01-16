@@ -6,10 +6,11 @@ import { motion } from "framer-motion"
 import { Target, Eye, Award, Users, TrendingUp, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function AboutPage() {
   const values = [
-    { 
+    {
       icon: Shield,
       title: "Trust & Transparency",
       description: "Building lasting relationships through honest and transparent financial advisory.",
@@ -57,7 +58,10 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              <span><b>"Ek Rista Vishwas Ka"</b></span> - Building trust through comprehensive financial solutions
+              <span>
+                <b>"Ek Rista Vishwas Ka"</b>
+              </span>{" "}
+              - Building trust through comprehensive financial solutions
             </motion.p>
           </div>
 
@@ -90,8 +94,8 @@ export default function AboutPage() {
                 their dreams.
               </p>
               <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                With 17 years of experience in the financial industry, our team of certified professionals is dedicated to
-                providing personalized solutions for investments, insurance, and loans.
+                With 17 years of experience in the financial industry, our team of certified professionals is dedicated
+                to providing personalized solutions for investments, insurance, and loans.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Today, we serve thousands of satisfied clients across India, helping them build wealth, protect their
@@ -186,11 +190,11 @@ export default function AboutPage() {
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               Experience the difference of personalized financial planning with Investroute
             </p>
-            <a href="#contact">
+            <Link href="/#contact">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-10 py-6 text-lg font-semibold">
                 Get Started Today
               </Button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

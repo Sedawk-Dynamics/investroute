@@ -90,16 +90,16 @@ export function Header() {
               icon: <TrendingUp className="w-5 h-5" />,
             },
             {
-              title: "Fixed Deposit",
-              description: "Guaranteed returns with low risk",
-              href: "/fixed-deposit",
-              icon: <Landmark className="w-5 h-5" />,
-            },
-            {
               title: "Share Trading",
               description: "Advanced stock trading platforms",
               href: "/share-trading",
               icon: <BarChart3 className="w-5 h-5" />,
+            },
+            {
+              title: "Fixed Deposit",
+              description: "Guaranteed returns with low risk",
+              href: "/fixed-deposit",
+              icon: <Landmark className="w-5 h-5" />,
             },
             {
               title: "Gold & Silver",

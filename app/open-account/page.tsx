@@ -97,8 +97,8 @@ export default function OpenAccountPage() {
           </Link>
           <div className="text-sm text-gray-600">
             Already have an account?{" "}
-            <Link href="/login" className="text-[#1E3A8A] font-semibold hover:underline">
-              Login
+            <Link href="/#contact" className="text-[#1E3A8A] font-semibold hover:underline">
+              Contact Us
             </Link>
           </div>
         </div>
