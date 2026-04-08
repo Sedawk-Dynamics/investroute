@@ -141,19 +141,30 @@ export function Footer() {
           </motion.div>
         </div>
 
-        <div className="border-t border-slate-300 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-            <p>© 2025 Investroute Financial Services Private Limited. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/privacy-policy" className="hover:text-secondary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-and-conditions" className="hover:text-secondary transition-colors">
-                Terms & Conditions
-              </Link>
-            </div>
-          </div>
-        </div>
+       <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+  <p>© 2025 Investroute Financial Services Private Limited. All rights reserved.</p>
+
+  <p>
+    Designed & Developed by{" "}
+    <a
+      href="https://webel.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-secondary hover:underline"
+    >
+      Webel.io
+    </a>
+  </p>
+
+  <div className="flex gap-6">
+    <Link href="/privacy-policy" className="hover:text-secondary transition-colors">
+      Privacy Policy
+    </Link>
+    <Link href="/terms-and-conditions" className="hover:text-secondary transition-colors">
+      Terms & Conditions
+    </Link>
+  </div>
+</div>
       </div>
     </footer>
   )
