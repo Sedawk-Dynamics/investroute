@@ -11,7 +11,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { motion, useScroll, useSpring } from "framer-motion"
 import { useEffect } from "react"
-
+ 
 export default function Home() {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {

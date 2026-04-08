@@ -40,6 +40,36 @@ const slides = [
 ]
 
 export function Hero() {
+
+  const handleSubmit = async () => {
+  try {
+    const res = await fetch("/api/investroute", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        product: formData.product,
+        name: formData.name,
+        phone: formData.phone,
+        termsAccepted: isAgreed,
+      }),
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      alert("Form submitted successfully ✅")
+      setFormData({ product: "", name: "", phone: "" })
+      setIsAgreed(false)
+    } else {
+      alert(data.error || "Something went wrong ❌")
+    }
+  } catch (error) {
+    console.error(error)
+    alert("Server error ❌")
+  }
+} 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAgreed, setIsAgreed] = useState(false)
   const [formData, setFormData] = useState({
@@ -255,15 +285,16 @@ export function Hero() {
 
               {/* Submit Button */}
               <Button
-                className={`w-full py-5 text-lg rounded-xl mt-2 ${
-                  !isAgreed || !formData.product || !formData.name || !formData.phone
-                    ? "bg-muted text-muted-foreground"
-                    : "bg-accent text-accent-foreground"
-                }`}
-                disabled={!isAgreed || !formData.product || !formData.name || !formData.phone}
-              >
-                Submit
-              </Button>
+  onClick={handleSubmit}   // ✅ ADD THIS LINE
+  className={`w-full py-5 text-lg rounded-xl mt-2 ${
+    !isAgreed || !formData.product || !formData.name || !formData.phone
+      ? "bg-muted text-muted-foreground"
+      : "bg-accent text-accent-foreground"
+  }`}
+  disabled={!isAgreed || !formData.product || !formData.name || !formData.phone}
+>
+  Submit
+</Button>
             </div>
           </motion.div>
         </div>
