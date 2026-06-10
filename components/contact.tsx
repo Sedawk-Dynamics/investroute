@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,6 +36,7 @@ const itemVariants = {
 export function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px", amount: 0.2 })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,6 +46,10 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
+
+  if (isSubmitting) return
+
+  setIsSubmitting(true)
 
   try {
     const res = await fetch("/api/contact", {
@@ -63,6 +68,8 @@ export function Contact() {
     setFormData({ name: "", email: "", phone: "", message: "" })
   } catch (error) {
     alert("Something went wrong. Please try again.")
+  } finally {
+    setIsSubmitting(false)
   }
 }
 
@@ -136,8 +143,15 @@ export function Contact() {
                     />
                   </motion.div>
                   <motion.div variants={itemVariants} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                      Send Message
+                    <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90">
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center gap-2">
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Sending...
+                        </div>
+                      ) : (
+                        "Send Message"
+                      )}
                     </Button>
                   </motion.div>
                 </motion.form>

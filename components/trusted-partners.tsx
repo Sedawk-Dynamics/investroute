@@ -10,7 +10,7 @@ const partners = [
   },
   {
     name: "Policy Bazaar",
-    logo: "/policy-bazaar-logo.jpg",
+    logo: "/policy-bazaar-logo.png",
   },
   {
     name: "PNB",
