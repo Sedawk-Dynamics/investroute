@@ -264,16 +264,16 @@ export function Hero() {
           })
         }
         className="w-full px-4 py-3 border-2 border-border rounded-xl"
-      >
+      >    
         <option value="">Select Product</option>
-       <option value="Mutual Fund">Mutual Fund</option>
-<option value="Share Trading">Share Trading</option>
-<option value="Personal Loan">Personal Loan</option>
-<option value="Home Loan">Home Loan</option>
-<option value="Loan Against Property">Loan Against Property</option>
-<option value="Business Loan">Business Loan</option>
-<option value="Health Insurance">Health Insurance</option>
-<option value="Life Insurance">Life Insurance</option>
+        <option value="Personal Loan">Personal Loan</option>
+        <option value="Home Loan">Home Loan</option>
+        <option value="Loan Against Property">Loan Against Property</option>
+        <option value="Business Loan">Business Loan</option>
+        <option value="Mutual Fund">Mutual Fund</option>
+        <option value="Share Trading">Share Trading</option>
+        <option value="Health Insurance">Health Insurance</option>
+        <option value="Life Insurance">Life Insurance</option>
       </select>
     </div>
 
