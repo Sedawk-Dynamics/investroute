@@ -190,7 +190,7 @@ export default function PrivacyPolicyPage() {
                 <div className="space-y-2 text-sm">
                   <p>📍 14/827 Indira Nagar, Sec-14 Indiranagar, Lucknow, Uttar Pradesh – 226016</p>
                   <p>📞 Phone: 8353922204 / 9151722204</p>
-                  <p>☎️ Landline: 0522-404843</p>
+                  <p>☎️ Landline: 0522-4048943</p>
                   <div>
                     <p className="font-semibold mb-1">📧 Email:</p>
                     <p>info@investroutecapital.com</p>

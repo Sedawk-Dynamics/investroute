@@ -120,6 +120,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Slide-in animations start off-screen; clip them so phones don't get a sideways scroll.
+     "clip" (unlike "hidden") keeps position: sticky working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 8rem;
