@@ -56,10 +56,10 @@ export function Header() {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = ""
     }
     return () => {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = ""
     }
   }, [isMobileMenuOpen])
 
@@ -455,16 +455,6 @@ export function Header() {
                   <a href="https://angel-one.onelink.me/Wjgr/vaakmjyn" target="_blank" rel="noreferrer">
                     <Button className="w-full bg-orange-500 hover:bg-orange-600 py-3 text-base font-bold text-white shadow-lg">
                       Open an Account
-                    </Button>
-                  </a>
-
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.investroute.financial.app"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button className="w-full bg-green-600 hover:bg-green-700 py-3 text-base font-bold text-white shadow-lg">
-                      Mobile App
                     </Button>
                   </a>
                 </div>

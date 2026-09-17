@@ -64,7 +64,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/mutual-fund" className="text-slate-600 hover:text-accent transition-colors">
-                  Mutual Funds
+                  Mutual Fund (ARN-106148)
                 </Link>
               </li>
               <li>
@@ -119,8 +119,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:8353922204" className="hover:text-secondary transition-colors">
-                  Telephone: 0522404843
+                <a href="tel:05224048943" className="hover:text-secondary transition-colors">
+                  Telephone: 05224048943
                 </a>
               </li>
               <li className="space-y-1">

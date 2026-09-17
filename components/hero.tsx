@@ -32,7 +32,7 @@ const slides = [
   },
   {
     title: "Home Loans",
-    subtitle: "Starting from 7.45%* p.a.",
+    subtitle: "Starting from 7.02%* p.a.",
     description: "Make your dream home a reality with our competitive loan rates and flexible repayment options.",
     image: "/home-loan-couple-handshake.jpeg",
     cta: "Apply Now",

@@ -203,7 +203,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Landline</h3>
-                      <p className="text-sm text-muted-foreground">0522404843</p>
+                      <p className="text-sm text-muted-foreground">05224048943</p>
                     </div>
                   </motion.div>
 

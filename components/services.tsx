@@ -2,31 +2,36 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
-import { Shield, TrendingUp, LineChart, Banknote } from "lucide-react"
+import { Shield, TrendingUp, LineChart, Banknote, ArrowRight } from "lucide-react"
 
 const services = [
   {
     icon: TrendingUp,
     title: "Mutual Funds",
+    href: "/mutual-fund",
     description:
       "Diversified investment portfolios tailored to your risk appetite and financial goals for long-term wealth creation.",
   },
   {
     icon: LineChart,
     title: "Share Trading",
+    href: "/share-trading",
     description:
       "Advanced trading platforms and expert guidance for equity investments in Indian and international markets.",
   },
   {
     icon: Shield,
     title: "Insurance Solutions",
+    href: "/insurance",
     description:
       "Comprehensive insurance coverage for life, health, and assets to protect what matters most to you and your family.",
   },
   {
     icon: Banknote,
     title: "Loan Services",
+    href: "/loans",
     description:
       "Flexible loan solutions for personal, business, and property needs with competitive rates and quick processing.",
   },
@@ -90,19 +95,25 @@ export function Services() {
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="h-full"
               >
-                <Card className="h-full flex flex-col border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6 space-y-4 flex flex-col flex-1">
-                    <motion.div
-                      whileHover={{ scale: 1.15, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center shadow-md"
-                    >
-                      <service.icon className="w-8 h-8 text-primary" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed flex-1 text-sm">{service.description}</p>
-                  </CardContent>
-                </Card>
+                <Link href={service.href} aria-label={`Learn more about ${service.title}`} className="block h-full group">
+                  <Card className="h-full flex flex-col cursor-pointer border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
+                    <CardContent className="p-6 space-y-4 flex flex-col flex-1">
+                      <motion.div
+                        whileHover={{ scale: 1.15, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center shadow-md"
+                      >
+                        <service.icon className="w-8 h-8 text-primary" />
+                      </motion.div>
+                      <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed flex-1 text-sm">{service.description}</p>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                        Learn more
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             </motion.div>
           ))}

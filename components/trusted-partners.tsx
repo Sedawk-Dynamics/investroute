@@ -42,11 +42,10 @@ export function TrustedPartners() {
           className="text-center mb-8 sm:mb-10 lg:mb-12"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Our Trusted <span className="text-primary">Partners</span>
+            Our Distributor <span className="text-primary">Partners</span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            We collaborate with India's leading financial institutions to bring you the best investment and insurance
-            solutions
+            We collaborate with India's leading financial institutions to bring you the best distributor solutions
           </p>
         </motion.div>
 
