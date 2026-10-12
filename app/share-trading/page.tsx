@@ -93,11 +93,11 @@ export default function ShareTradingPage() {
               className="relative"
             >
               <Image
-                src="/stock-market-trading.jpg"
-                alt="Share Trading Platform"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-brand-xl"
+                src="/angel-one-trading-signals.png"
+                alt="Angel One real-time trading signals and a free Demat account"
+                width={1024}
+                height={768}
+                className="w-full h-auto rounded-2xl shadow-brand-xl"
               />
             </motion.div>
           </div>
