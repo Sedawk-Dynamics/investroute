@@ -27,12 +27,12 @@ const slides = [
     subtitle: "Protect What Matters Most",
     description:
       "Save on medical expenses & get tax benefits with Health Insurance. Save up to ₹75,000** under Section 80D.",
-    image: "/insurance-office-exterior.jpeg",
+    image: "/comprehensive-insurance-hero.png",
     cta: "Get Insured",
   },
   {
     title: "Home Loans",
-    subtitle: "Starting from 7.20%* p.a.",
+    subtitle: "Starting from 7.60%* p.a.",
     description: "Make your dream home a reality with our competitive loan rates and flexible repayment options.",
     image: "/home-loans-investments.png",
     cta: "Apply Now",
