@@ -14,6 +14,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="md:row-span-2"
           >
             <Image
               src="/investroute-logo.png"
@@ -90,6 +91,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="md:col-start-4 md:row-start-1 md:row-span-2"
           >
             <h4 className="font-bold mb-4 text-secondary">Contact Info</h4>
             <ul className="space-y-2 text-sm text-slate-600">
@@ -139,6 +141,16 @@ export function Footer() {
               </li>
             </ul>
           </motion.div>
+          <div className="md:col-start-2 md:col-span-2 md:row-start-2 space-y-3 text-sm text-slate-600 leading-relaxed">
+            <dl className="space-y-1">
+              <div><dt className="inline font-semibold text-slate-800">AP Name: </dt><dd className="inline">Manoj Rathour</dd></div>
+              <div><dt className="inline font-semibold text-slate-800">AP Registered Address: </dt><dd className="inline">Sector 14/827 Indira Nagar, near RLB school, Lucknow - 226016</dd></div>
+              <div><dt className="inline font-semibold text-slate-800">NSE Reg No.: </dt><dd className="inline">AP0397159991</dd></div>
+              <div><dt className="inline font-semibold text-slate-800">BSE Reg No.: </dt><dd className="inline">AP0106120168520</dd></div>
+              <div><dt className="inline font-semibold text-slate-800">MCX Reg No.: </dt><dd className="inline">MCX/AP/112370</dd></div>
+            </dl>
+            <p>Investments in securities market are subject to market risks, read all the related documents carefully before investing.</p>
+          </div>
         </div>
 
        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">

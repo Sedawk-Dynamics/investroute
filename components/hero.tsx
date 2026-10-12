@@ -10,10 +10,10 @@ import Link from "next/link"
 
 const slides = [
   {
-    title: "Share Trading",
+    title: "When to act? What to trade? Get real time signals on Angel One and open a free Demat Account.",
     subtitle: "Smart Investment Solutions",
     description: "Access the stock market with our expert guidance and advanced trading platforms.",
-    image: "/investor-stock-trading-cityscape.jpeg",
+    image: "/angel-one-trading-signals.png",
     cta: "Start Trading",
   },
   {
@@ -32,9 +32,9 @@ const slides = [
   },
   {
     title: "Home Loans",
-    subtitle: "Starting from 7.02%* p.a.",
+    subtitle: "Starting from 7.20%* p.a.",
     description: "Make your dream home a reality with our competitive loan rates and flexible repayment options.",
-    image: "/home-loan-couple-handshake.jpeg",
+    image: "/home-loans-investments.png",
     cta: "Apply Now",
   },
 ]
@@ -95,7 +95,7 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 10000)
 
     return () => clearInterval(interval)
   }, [])
@@ -140,84 +140,64 @@ export function Hero() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0"
                 >
-                  <img
-                    src={slides[currentSlide].image || "/placeholder.svg"}
-                    alt={slides[currentSlide].title}
-                    className="w-full h-full object-cover"
-                  />
-
-                  {/* Overlay Content */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent">
-                    <div className="absolute left-4 sm:left-8 lg:left-16 top-1/2 -translate-y-1/2 max-w-[90%] sm:max-w-md lg:max-w-lg">
-                      <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-2"
-                      >
-                        {slides[currentSlide].title}
-                      </motion.h2>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-xl sm:text-2xl lg:text-4xl font-bold text-secondary mb-4"
-                      >
-                        {slides[currentSlide].subtitle}
-                      </motion.div>
-
-                      <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="text-white/95 text-sm lg:text-base mb-6"
-                      >
-                        {slides[currentSlide].description}
-                      </motion.p>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        {currentSlide === 0 ? (
-                          <a
-                            href="https://angel-one.onelink.me/Wjgr/2mfp3knv"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button className="bg-secondary hover:bg-secondary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-lg rounded-full group shadow-lg hover:shadow-xl transition-all">
-                              {slides[currentSlide].cta}
-                              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-                            </Button>
-                          </a>
-                        ) : (
-                          <Button
-                            onClick={scrollToForm}
-                            className="bg-secondary hover:bg-secondary/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-6 text-lg rounded-full group shadow-lg hover:shadow-xl transition-all"
-                          >
-                            {slides[currentSlide].cta}
-                            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-                          </Button>
+                  {currentSlide === 0 ? (
+                    <a
+                      href="https://angel-one.onelink.me/Wjgr/2mfp3knv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open a free Demat Account with Angel One (opens in a new tab)"
+                      className="absolute inset-0 bottom-16 flex items-center bg-[#f0f4fc] focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-4px]"
+                    >
+                      <img
+                        src={slides[0].image}
+                        alt={slides[0].title}
+                        className="w-full h-full object-contain"
+                      />
+                    </a>
+                  ) : (
+                    <div className="absolute inset-0 bottom-16 flex flex-col justify-center bg-[#fffaf2]">
+                      <div className="min-h-0 flex-1">
+                        <img
+                          src={slides[currentSlide].image}
+                          alt={currentSlide === 3 ? "Mortgage - Loans, Funds & Investment. Competitive Home Loans, Comprehensive Insurance, Mutual Funds, Shares & Savings." : slides[currentSlide].title}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="shrink-0 px-4 py-4 text-center sm:px-6">
+                        {currentSlide !== 3 && (
+                          <>
+                            <h2 className="text-xl sm:text-2xl font-bold text-primary">{slides[currentSlide].title}</h2>
+                            <p className="mt-2 text-sm text-slate-600 leading-relaxed">{slides[currentSlide].description}</p>
+                          </>
                         )}
-                      </motion.div>
+                        <div className={"flex flex-wrap items-center justify-center gap-3 " + (currentSlide !== 3 ? "mt-3" : "")}>
+                          {slides[currentSlide].subtitle && (
+                            <p className="text-sm sm:text-lg font-semibold text-primary">{slides[currentSlide].subtitle}</p>
+                          )}
+                          <Button onClick={scrollToForm} className="bg-secondary hover:bg-secondary/90 text-primary-foreground rounded-full px-6">
+                            {slides[currentSlide].cta}
+                            <ArrowRight className="ml-2" size={18} />
+                          </Button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
 
               {/* Navigation Buttons */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-all z-20"
+                aria-label="Previous slide"
+                className={`absolute left-4 bottom-2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-all z-20`}
               >
                 <ChevronLeft className="text-primary" size={20} />
               </button>
 
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-secondary text-white shadow-xl flex items-center justify-center hover:scale-110 transition-all z-20"
+                aria-label="Next slide"
+                className={`absolute right-4 bottom-2 w-12 h-12 rounded-full bg-secondary text-white shadow-xl flex items-center justify-center hover:scale-110 transition-all z-20`}
               >
                 <ChevronRight size={20} />
               </button>
@@ -227,9 +207,11 @@ export function Hero() {
                 {slides.map((_, index) => (
                   <button
                     key={index}
+                    aria-label={`Go to slide ${index + 1}`}
+                    aria-current={index === currentSlide ? "true" : undefined}
                     onClick={() => setCurrentSlide(index)}
                     className={`h-2 rounded-full transition-all ${
-                      index === currentSlide ? "w-8 bg-secondary" : "w-2 bg-white/60"
+                      index === currentSlide ? "w-8 bg-secondary" : "w-2 bg-slate-400"
                     }`}
                   />
                 ))}
