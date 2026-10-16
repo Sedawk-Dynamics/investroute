@@ -63,7 +63,8 @@ const itemVariants = {
 
 export function Services() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px", amount: 0.2 })
+  // Reveal even tall, stacked sections on short mobile viewports.
+  const isInView = useInView(ref, { once: true, amount: "some" })
 
   return (
     <section id="services" ref={ref} className="py-24 bg-gradient-to-b from-background to-muted/20">

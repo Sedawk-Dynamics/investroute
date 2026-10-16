@@ -35,7 +35,8 @@ const itemVariants = {
 
 export function Contact() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px", amount: 0.2 })
+  // Reveal even tall, stacked sections on short mobile viewports.
+  const isInView = useInView(ref, { once: true, amount: "some" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
