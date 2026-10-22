@@ -72,7 +72,7 @@ export function AppDownloadPopup() {
             />
 
             <h2 id="app-popup-title" className="mt-2 text-center text-2xl font-extrabold text-slate-900">
-              Get the Investroute App
+              Download now on Google Play
             </h2>
             <p className="mt-2 text-center text-sm text-slate-600">
               Invest in mutual funds, track your portfolio and manage insurance & loans — all from your phone.
