@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
-import { Download, ShieldCheck, TrendingUp, X, Zap } from "lucide-react"
+import { ShieldCheck, TrendingUp, X, Zap } from "lucide-react"
 
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.investroute.financial.app"
+const DOWNLOAD_URL = "https://angel-one.onelink.me/Wjgr/q1vm8jsh"
 const DISMISSED_KEY = "investroute-app-popup-dismissed"
 const SHOW_DELAY_MS = 3000
 
@@ -72,7 +72,13 @@ export function AppDownloadPopup() {
             />
 
             <h2 id="app-popup-title" className="mt-2 text-center text-2xl font-extrabold text-slate-900">
-              Download now on Google Play
+              <a
+                href={DOWNLOAD_URL}
+                onClick={close}
+                className="rounded text-green-600 underline underline-offset-4 transition hover:text-green-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-600"
+              >
+                Download Now
+              </a>
             </h2>
             <p className="mt-2 text-center text-sm text-slate-600">
               Invest in mutual funds, track your portfolio and manage insurance & loans — all from your phone.
@@ -93,16 +99,6 @@ export function AppDownloadPopup() {
               </li>
             </ul>
 
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noreferrer"
-              onClick={close}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-green-600 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-green-700"
-            >
-              <Download className="h-5 w-5" />
-              Download on Google Play
-            </a>
             <button
               type="button"
               onClick={close}
