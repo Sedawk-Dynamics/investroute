@@ -93,8 +93,8 @@ export function TrustedPartners() {
             <p className="text-sm sm:text-base text-muted-foreground">Happy Clients</p>
           </div>
           <div className="text-center p-5 sm:p-6 bg-card rounded-xl border border-border/50">
-            <div className="text-3xl sm:text-4xl font-bold text-secondary mb-2">₹110 Cr+</div>
-            <p className="text-sm sm:text-base text-muted-foreground">Clients Asset Under Management</p>
+            <div className="text-3xl sm:text-4xl font-bold text-secondary mb-2">24/7</div>
+            <p className="text-sm sm:text-base text-muted-foreground">Support access</p>
           </div>
           <div className="text-center p-5 sm:p-6 bg-card rounded-xl border border-border/50">
             <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">17+</div>
