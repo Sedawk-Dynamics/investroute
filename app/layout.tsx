@@ -4,7 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Chatbot } from "@/components/chatbot"
-import { AppDownloadPopup } from "@/components/app-download-popup"
+import { FestivalPopup } from "@/components/festival-popup"
 import "./globals.css"
 
 const inter = Inter({
@@ -31,7 +31,7 @@ export default function RootLayout({
         {children}
         <Chatbot />
         <WhatsAppFloat />
-        <AppDownloadPopup />
+        <FestivalPopup />
         <Analytics />
       </body>
     </html>
