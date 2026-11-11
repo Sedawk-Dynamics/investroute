@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
 import { ArrowRight, Sparkles, X } from "lucide-react"
 
-const DISMISSED_KEY = "investroute-govardhan-pooja-2026-dismissed"
+const DISMISSED_KEY = "investroute-bhai-dooj-2026-dismissed"
 
 export function FestivalPopup() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,15 +35,15 @@ export function FestivalPopup() {
           aria-describedby={undefined}
           className="fixed left-1/2 top-1/2 z-[101] w-[min(560px,calc(100vw-2rem),calc(100dvh-180px))] max-h-[calc(100dvh-2rem)] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-[24px] border border-[#e8bd70]/50 bg-[linear-gradient(145deg,#352019,#170d0a)] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.6),0_0_60px_rgba(225,156,54,0.12)] outline-none duration-500 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 motion-reduce:animate-none sm:p-3"
         >
-          <Dialog.Title className="sr-only">Happy Govardhan Pooja from Investroute</Dialog.Title>
+          <Dialog.Title className="sr-only">Happy Bhai Dooj from Investroute</Dialog.Title>
           <div className="flex min-h-12 items-center gap-2 px-3 pr-12 pb-2 text-[#edd3a1]">
             <Sparkles className="h-4 w-4 shrink-0 text-[#e7b75f]" aria-hidden="true" />
             <span className="text-[10px] font-medium uppercase tracking-[0.22em] sm:text-[11px]">With love, Investroute</span>
           </div>
           <div className="overflow-hidden rounded-[16px] border border-[#edc47d]/30">
           <img
-            src="/images/govardhan-pooja-greeting.png"
-            alt="Happy Govardhan Pooja. Warm wishes from Investroute. Lord Krishna lifts Govardhan Hill to shelter villagers and cows."
+            src="/images/bhai-dooj-greeting.png"
+            alt="Happy Bhai Dooj 2026. Warm wishes from Investroute, with a festive thali, diya, sweets, rice, and kumkum."
             width={1254}
             height={1254}
             className="block h-auto w-full"
